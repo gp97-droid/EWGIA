@@ -277,4 +277,248 @@ const Q=[
 {id:46,w:6,subj:"ПИ",type:"t",diff:3,q:"Опишите полный жизненный цикл разработки ИС для кадрового агентства — от обследования до сдачи в эксплуатацию. Перечислите артефакты каждого этапа.",hint:"Привяжи этапы ЖЦ к конкретным документам: ТЗ, ER-диаграмма, UML, тест-кейсы, руководство пользователя.",explain:"Жизненный цикл ИС «Кадровое агентство»:\n\n1. Формирование требований\n   Работы: интервью с агентами, анализ бизнес-процессов, анкетирование\n   Артефакты: перечень требований, описание бизнес-процессов «AS IS»\n\n2. Разработка концепции\n   Работы: анализ альтернатив, технико-экономическое обоснование\n   Артефакты: концепция ИС, ТЭО\n\n3. Техническое задание\n   Артефакты: ТЗ (назначение, функции, требования к ПО/ТО/ИО/ОО)\n\n4. Эскизный проект\n   Работы: концептуальное проектирование\n   Артефакты: ER-диаграмма БД, диаграмма прецедентов UML, прототип UI\n\n5. Технический проект\n   Работы: детальное проектирование\n   Артефакты: диаграммы классов, последовательности, деятельности, схема БД, архитектура ПО\n\n6. Рабочая документация\n   Работы: программирование, написание документации\n   Артефакты: исходный код, тест-кейсы, руководство пользователя, руководство администратора\n\n7. Ввод в действие\n   Работы: установка, настройка, обучение, опытная эксплуатация\n   Артефакты: акт сдачи-приёмки, протоколы испытаний\n\n8. Сопровождение\n   Работы: исправление ошибок, доработки, обновления",ans:"1.Требования (ТЗ), 2.Концепция (ТЭО), 3.Эскизный (ER+UseCase), 4.Технический (UML+схема БД), 5.Рабочая документация (код+тесты), 6.Ввод в действие (обучение+приёмка), 7.Сопровождение"},
 {id:47,w:6,subj:"ПИ",type:"mc",diff:2,q:"Что такое архитектурный паттерн MVC и где он применяется?",opts:["A. Model-View-Controller — разделение данных, представления и логики управления; применяется в веб-приложениях","B. Multi-Version-Control — система контроля версий кода; применяется в Git","C. Main-View-Component — структура HTML-страницы с блоками","D. Module-Validation-Cache — паттерн оптимизации производительности"],correct:0,hint:"M=данные, V=отображение, C=логика управления запросами.",explain:"MVC (Model-View-Controller) — архитектурный паттерн разделения ответственности: Model (Модель) — данные, бизнес-логика, работа с БД; независима от UI. View (Представление) — отображение данных пользователю; HTML-шаблоны. Controller (Контроллер) — обрабатывает входящие запросы, вызывает Model, возвращает View. Поток: Request → Controller → Model → View → Response. Применение: веб-фреймворки (Django, Spring MVC, Ruby on Rails, Laravel). Преимущества: разделение ответственности, тестируемость, повторное использование. Варианты: MVP, MVVM (для мобильных и SPA).",ans:"A"},
 {id:48,w:2,subj:"БД",type:"mc",diff:2,q:"Что такое транзакция в СУБД? Назовите свойства ACID.",opts:["A. Запрос SELECT к базе данных; ACID = автоматическое создание индексов","B. Логическая единица работы с БД, выполняемая полностью или не выполняемая вовсе; ACID = Atomicity, Consistency, Isolation, Durability","C. Резервная копия таблицы; ACID = архивирование","D. Представление (VIEW) в БД; ACID = безопасность данных"],correct:1,hint:"ACID: Атомарность, Согласованность, Изолированность, Долговечность.",explain:"Транзакция — последовательность операций с БД, обрабатываемых как единое целое. Свойства ACID: Atomicity (Атомарность) — транзакция либо выполняется полностью, либо не выполняется вовсе (ROLLBACK при ошибке). Consistency (Согласованность) — БД переходит из одного корректного состояния в другое (не нарушаются ограничения целостности). Isolation (Изолированность) — транзакции не мешают друг другу; уровни: READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ, SERIALIZABLE. Durability (Долговечность) — зафиксированные изменения сохраняются даже при сбое (журнал WAL). Команды: BEGIN, COMMIT, ROLLBACK.",ans:"B"},
-{id:49,w:1,subj:"ИКТ",type:"mc",diff:2,q:"Что такое система управления базами данных (СУБД)? Чем реляционная СУБД отличается от нереляционной (NoSQL)?",opts:["A. СУБД — это только язык SQL; NoSQL не существует","B. СУБД — ПО для создания и управления БД; реляционная хранит данные в связанных таблицах (SQL); NoSQL — документы, графы, ключ-значение, колонки","C. СУБД — только файловая система; NoSQL — реляционная","D. Реляционные СУБД только для малых данных; NoSQL — для любого объ
+{id:49,w:1,subj:"ИКТ",type:"mc",diff:2,q:"Что такое система управления базами данных (СУБД)? Чем реляционная СУБД отличается от нереляционной (NoSQL)?",opts:["A. СУБД — это только язык SQL; NoSQL не существует","B. СУБД — ПО для создания и управления БД; реляционная хранит данные в связанных таблицах (SQL); NoSQL — документы, графы, ключ-значение, колонки","C. СУБД — только файловая система; NoSQL — реляционная","D. Реляционные СУБД только для малых данных; NoSQL — для любого объёма"],correct:1,hint:"СУБД = Database Management System. Реляционная = таблицы + связи.",explain:"СУБД (Система Управления Базами Данных) — программное обеспечение для создания, управления и доступа к базам данных. Реляционные СУБД (PostgreSQL, MySQL, Oracle): данные в таблицах со связями, ACID-транзакции, SQL. NoSQL СУБД: MongoDB (документы), Redis (ключ-значение), Neo4j (графы), Cassandra (колонки). Преимущества NoSQL: горизонтальная масштабируемость, гибкая схема, высокая производительность для определённых паттернов доступа.",ans:"B"},
+{id:50,w:1,subj:"ИС",type:"mc",diff:1,q:"Что такое информационный процесс?",opts:["A. Только хранение данных на носителе","B. Процессы сбора, передачи, обработки, хранения и использования информации","C. Исключительно передача данных по сети","D. Только обработка данных в компьютере"],correct:1,hint:"Информационные процессы охватывают весь жизненный цикл информации.",explain:"Информационный процесс — совокупность действий над информацией: Сбор (получение из источников) → Передача (транспортировка каналами связи) → Обработка (преобразование, анализ, вычисления) → Хранение (сохранение на носителях) → Использование (применение для принятия решений). Эти процессы лежат в основе работы любых информационных систем.",ans:"B"},
+{id:51,w:1,subj:"ИС",type:"mc",diff:2,q:"Какая модель жизненного цикла ИС наиболее подходит для проектов с нечёткими требованиями?",opts:["A. Каскадная (водопадная)","B. Спиральная или итерационная","C. Классическая V-модель","D. Последовательная модель"],correct:1,hint:"Когда требования меняются — нужны итерации и прототипирование.",explain:"Спиральная и итерационная модели подходят для проектов с неопределёнными требованиями: Спиральная (Боэм) — каждый виток включает анализ рисков, позволяет корректировать требования. Итерационная — система создаётся частями (инкрементами), заказчик видит результат рано и может вносить изменения. Каскадная модель требует чётких требований в начале и плохо адаптируется к изменениям.",ans:"B"},
+{id:52,w:2,subj:"БД",type:"s",diff:3,q:"Напишите SQL-запрос: есть таблица Студент(id, фио, группа, средний_балл). Выведите топ-3 группы по среднему баллу студентов.",hint:"Нужен GROUP BY, AVG(), ORDER BY DESC и LIMIT.",explain:"Правильный SQL-запрос:\n\nSELECT группа, ROUND(AVG(средний_балл), 2) AS ср_балл\nFROM Студент\nGROUP BY группа\nORDER BY ср_балл DESC\nLIMIT 3;\n\nРазбор:\n• GROUP BY группа — группируем студентов по группам\n• AVG(средний_балл) — вычисляем средний балл в каждой группе\n• ROUND(..., 2) — округляем до 2 знаков\n• ORDER BY ср_балл DESC — сортируем по убыванию\n• LIMIT 3 — берём только первые 3 строки",ans:"SELECT группа, AVG(средний_балл) AS ср_балл FROM Студент GROUP BY группа ORDER BY ср_балл DESC LIMIT 3"},
+{id:53,w:3,subj:"UML",type:"mc",diff:2,q:"Что показывает диаграмма состояний (State Machine Diagram) в UML?",opts:["A. Структуру классов системы","B. Жизненный цикл объекта: состояния, переходы между ними, события и действия","C. Взаимодействие объектов во времени","D. Физическое развёртывание компонентов"],correct:1,hint:"State = состояние. Диаграмма показывает, как объект меняет состояния.",explain:"Диаграмма состояний моделирует жизненный цикл объекта одного класса. Элементы: Состояние (прямоугольник с закруглёнными углами) — условие, при котором объект выполняет определённую деятельность; Переход (стрелка) — изменение состояния при событии; Событие — триггер перехода (сигнал, вызов операции, истечение времени); Действие — активность при переходе (entry/exit/do); Начальное состояние (чёрный круг) и Конечное (чёрный круг в белом). Применение: моделирование сложных объектов с множеством состояний (Заказ: черновик→оплачен→отправлен→доставлен).",ans:"B"},
+{id:54,w:4,subj:"МЛ",type:"mc",diff:2,q:"Что такое логическое следование (A ⊧ B)?",opts:["A. A и B всегда истинны одновременно","B. Во всех моделях, где A истинно, B также истинно","C. A ложно тогда и только тогда, когда B ложно","D. A и B не имеют логической связи"],correct:1,hint:"Следование = импликация, которая является тавтологией.",explain:"Логическое следование (A ⊧ B) означает: во всех интерпретациях (наборах значений переменных), где формула A истинна, формула B также истинна. Эквивалентно: формула A → B является тавтологией (всегда истинна). Пример: A&B ⊧ A (если A и B истинны, то A точно истинно). Проверка: строим таблицу истинности A → B, если все единицы — есть следование.",ans:"B"},
+{id:55,w:4,subj:"ТА",type:"mc",diff:2,q:"Что такое рекурсивная функция?",opts:["A. Функция, которая никогда не завершается","B. Функция, определяющая значение через саму себя для меньших аргументов","C. Функция, работающая только с числами","D. Функция без параметров"],correct:1,hint:"Рекурсия = функция вызывает сама себя с упрощённым аргументом.",explain:"Рекурсивная функция — функция, которая определяет своё значение через саму себя для меньших (более простых) аргументов. Обязательные компоненты: Базис (базовый случай) — условие остановки, когда значение известно напрямую; Рекурсивный шаг — правило вычисления через значения для меньших аргументов. Пример: Факториал n! = n × (n-1)!, базис: 0! = 1. Частично рекурсивные функции — формализация понятия вычислимости (Клини).",ans:"B"},
+{id:56,w:5,subj:"Прог",type:"mc",diff:2,q:"Что такое хеш-таблица? Какова сложность поиска в среднем?",opts:["A. Массив с индексами; O(n)","B. Структура данных, использующая хеш-функцию для отображения ключей на индексы; средняя сложность O(1)","C. Отсортированный массив; O(log n)","D. Связный список; O(n)"],correct:1,hint:"Хеш-таблица = ключ → хеш-функция → индекс. Быстрый доступ за O(1).",explain:"Хеш-таблица — структура данных для быстрого поиска по ключу. Принцип: Хеш-функция h(key) преобразует ключ в индекс массива; Значение хранится в ячейке с этим индексом. Средняя сложность поиска/вставки/удаления: O(1). Коллизии (разные ключи → один хеш) решаются: Метод цепочек (список в ячейке); Открытая адресация (линейное/квадратичное пробирование). Применение: словари, кэши, множества, базы данных.",ans:"B"},
+{id:57,w:5,subj:"Мат",type:"mc",diff:2,q:"Что такое дерево в теории графов?",opts:["A. Граф с циклами","B. Связный ациклический граф (нет циклов, любая пара вершин соединена единственным путём)","C. Полный граф","D. Граф, где все вершины имеют одинаковую степень"],correct:1,hint:"Дерево = нет циклов + связность. n вершин → n-1 рёбер.",explain:"Дерево — связный ациклический граф (нет циклов, между любыми двумя вершинами ровно один простой путь). Свойства: Число рёбер = n - 1 (где n — число вершин); Удаление любого ребра нарушает связность; Добавление любого ребра создаёт цикл. Виды: Корневое дерево (есть выделенный корень, иерархия); Лес (набор несвязных деревьев). Применение: иерархии (файловая система, DOM), алгоритмы (поиск, сортировка), структуры данных (BST, B-дерево).",ans:"B"},
+{id:58,w:6,subj:"ПИ",type:"mc",diff:2,q:"Что такое REST API?",opts:["A. Протокол удалённого вызова процедур","B. Архитектурный стиль проектирования веб-сервисов: ресурсы идентифицируются URL, операции — HTTP-методами, состояние не хранится на сервере","C. Язык описания веб-сервисов","D. База данных для веб-приложений"],correct:1,hint:"REST = Representational State Transfer. Ресурсы + HTTP-методы + stateless.",explain:"REST (Representational State Transfer) — архитектурный стиль для распределённых систем (веб-API). Принципы: Клиент-сервер (разделение ответственности); Stateless (сервер не хранит состояние клиента между запросами); Кэшируемость (ответы можно кэшировать); Единообразие интерфейса: Ресурсы идентифицируются URI (например, /users/123); Операции выполняются HTTP-методами (GET, POST, PUT, DELETE); Представления ресурсов (JSON, XML). Преимущества: простота, масштабируемость, независимость клиентов и сервера.",ans:"B"},
+{id:59,w:6,subj:"ПИ",type:"mc",diff:3,q:"Что такое непрерывная интеграция (CI) и непрерывное развёртывание (CD)?",opts:["A. Методология управления проектами","B. Практики автоматизации: CI — частая интеграция кода с автотестами, CD — автоматическое развёртывание в продакшен","C. Инструменты мониторинга системы","D. Способы резервного копирования данных"],correct:1,hint:"CI/CD = автоматизация сборки, тестирования и деплоя.",explain:"CI/CD — практики DevOps для автоматизации доставки ПО: Continuous Integration (Непрерывная интеграция): Разработчики часто сливают код в общую ветку (несколько раз в день); Каждая интеграция запускает автоматическую сборку и тесты; Раннее выявление конфликтов и ошибок. Continuous Delivery/Deployment (Непрерывная доставка/развёртывание): Автоматическое развёртывание прошедшего тесты кода на staging/prod; Delivery — деплой по кнопке, Deployment — полностью автоматически. Инструменты: Jenkins, GitLab CI, GitHub Actions, CircleCI.",ans:"B"},
+{id:60,w:2,subj:"БД",type:"mc",diff:2,q:"Что такое представление (VIEW) в SQL?",opts:["A. Физическая таблица с данными","B. Виртуальная таблица, результат сохранённого SELECT-запроса","C. Резервная копия таблицы","D. Индекс для ускорения поиска"],correct:1,hint:"VIEW = сохранённый запрос, который выглядит как таблица.",explain:"Представление (VIEW) — виртуальная таблица, определяемая SELECT-запросом. Данные не хранятся физически (кроме материализованных представлений), при обращении к VIEW выполняется её запрос. Применение: Упрощение сложных запросов (скрытие JOIN); Безопасность (доступ только к определённым столбцам/строкам); Абстракция (независимость от изменений схемы). Пример: CREATE VIEW active_users AS SELECT * FROM users WHERE active=1; Материал. представления хранят результат и требуют обновления (REFRESH MATERIALIZED VIEW).",ans:"B"}
+];
+
+// === СОСТОЯНИЕ ПРИЛОЖЕНИЯ ===
+let F={status:'all',week:'all',subj:'all',type:'all',diff:'all'};
+let P={}; // Прогресс: {idQ: {status:'new'|'bad'|'ok'|'good', attempts:n, lastCheck:date}}
+
+// === ЗАГРУЗКА ПРОГРЕССА ===
+function loadProgress(){
+  try{const s=localStorage.getItem('gia_progress');if(s)P=JSON.parse(s);}catch(e){}
+  updateStats();
+}
+
+// === СОХРАНЕНИЕ ПРОГРЕССА ===
+function saveProgress(){
+  localStorage.setItem('gia_progress',JSON.stringify(P));
+  updateStats();
+}
+
+// === ОБНОВЛЕНИЕ СТАТИСТИКИ ===
+function updateStats(){
+  const total=Q.length;
+  let good=0,bad=0,ok=0,newC=0;
+  Q.forEach(q=>{
+    const st=P[q.id]?.status||'new';
+    if(st==='good')good++;else if(st==='bad')bad++;else if(st==='ok')ok++;else newC++;
+  });
+  document.getElementById('hs-total').textContent=total;
+  document.getElementById('hs-done').textContent=total-newC;
+  document.getElementById('hs-good').textContent=good;
+  document.getElementById('hs-bad').textContent=bad;
+  document.getElementById('cnt-all').textContent=total;
+  document.getElementById('cnt-new').textContent=newC;
+  document.getElementById('cnt-bad').textContent=bad;
+  document.getElementById('cnt-ok').textContent=ok;
+  document.getElementById('cnt-good').textContent=good;
+  document.getElementById('gp-total').textContent=total;
+  document.getElementById('gp-good').textContent=good;
+  document.getElementById('gp-ok').textContent=ok;
+  document.getElementById('gp-bad').textContent=bad;
+  const pct=total>0?Math.round((good+ok*0.5)/total*100):0;
+  document.getElementById('pb-pct').textContent=pct+'%';
+  document.getElementById('pb-g').style.width=(total>0?good/total*100:0)+'%';
+  document.getElementById('pb-o').style.width=(total>0?ok/total*100:0)+'%';
+  document.getElementById('pb-b').style.width=(total>0?bad/total*100:0)+'%';
+  document.getElementById('sprog').style.width=pct+'%';
+}
+
+// === ФИЛЬТРАЦИЯ ===
+function sf(g,v,bt){
+  F[g]=v;
+  document.querySelectorAll(`[data-fg="${g}"]`).forEach(b=>b.classList.remove('active'));
+  bt.classList.add('active');
+  renderAll();
+}
+
+// === ПРОВЕРКА ФИЛЬТРОВ ===
+function matches(q){
+  if(F.status!=='all'){const st=P[q.id]?.status||'new';if(st!==F.status)return false;}
+  if(F.week!=='all'&&q.w!=F.week)return false;
+  if(F.subj!=='all'&&q.subj!==F.subj)return false;
+  if(F.type!=='all'&&q.type!==F.type)return false;
+  if(F.diff!=='all'&&q.diff!=F.diff)return false;
+  const srch=document.getElementById('sinp').value.toLowerCase().trim();
+  if(srch&&!q.q.toLowerCase().includes(srch)&&!q.explain.toLowerCase().includes(srch))return false;
+  return true;
+}
+
+// === ОТРИСОВКА ВСЕХ ВОПРОСОВ ===
+function renderAll(){
+  const grid=document.getElementById('qgrid');
+  const filtered=Q.filter(matches);
+  document.getElementById('scnt').textContent=`Показано ${filtered.length} из ${Q.length} вопросов`;
+  if(filtered.length===0){
+    grid.innerHTML='<div class="empty"><h3>Нет вопросов по выбранным фильтрам</h3><p>Измените параметры фильтрации или поисковый запрос</p></div>';
+    return;
+  }
+  grid.innerHTML=filtered.map(q=>renderCard(q)).join('');
+}
+
+// === ОТРИСОВКА КАРТОЧКИ ВОПРОСА ===
+function renderCard(q){
+  const prog=P[q.id]||{};const status=prog.status||'new';
+  const badges=[];
+  badges.push(`<span class="badge bis">${q.subj}</span>`);
+  badges.push(`<span class="badge btp">Неделя ${q.w}</span>`);
+  const typeLbl={mc:'Тест',t:'Теория',p:'Практика',s:'Задача'};
+  badges.push(`<span class="badge bts">${typeLbl[q.type]||q.type}</span>`);
+  const diffCls=['','diff1','diff2','diff3'];const diffLbl=['','🟢 Лёгкий','🟡 Средний','🔴 Сложный'];
+  badges.push(`<span class="badge ${diffCls[q.diff]}">${diffLbl[q.diff]}</span>`);
+  const opts=q.opts?q.opts.map((o,i)=>`<div class="opt" onclick="selOpt(this,${q.id},${i})"><span class="okey">${String.fromCharCode(65+i)}</span><span>${o}</span></div>`).join(''):'';
+  const ta=q.type==='t'||q.type==='p'||q.type==='s'?'<div class="ans-lbl">Ваш ответ:</div><textarea class="ai" id="ta-'+q.id+'" placeholder="Введите развёрнутый ответ..."></textarea>':'';
+  const btns=`<div class="arow"><button class="bsm bchk" onclick="checkAnswer(${q.id})">✓ Проверить</button><button class="bsm" onclick="toggleHint(${q.id})">💡 Подсказка</button><button class="bsm" onclick="toggleExplain(${q.id})">📖 Объяснение</button></div>`;
+  const hint=`<div class="fb hfb" id="hint-${q.id}"><div class="fbh h">💡 Подсказка</div><div class="fbt">${q.hint||'Нет подсказки'}</div></div>`;
+  const expl=`<div class="fb efb" id="expl-${q.id}"><div class="fbh e">📖 Подробное объяснение</div><div class="fbt">${q.explain.replace(/\n/g,'<br>')}</div></div>`;
+  const rate=`<div class="srate" id="rate-${q.id}"><span class="srl">Оцените свои знания:</span><button class="rb rbg" onclick="setRate(${q.id},'good')">Знаю отлично</button><button class="rb rbo" onclick="setRate(${q.id},'ok')">Частично</button><button class="rb rbb" onclick="setRate(${q.id},'bad')">Повторить</button><span class="rsaved" id="saved-${q.id}">Сохранено!</span></div>`;
+  return `<div class="q-card ${status==='good'?'dg':status==='ok'?'do':status==='bad'?'db':''}" id="card-${q.id}">
+    <div class="q-header" onclick="toggleCard(${q.id})">
+      <div class="q-meta">${badges.join('')}<span class="qnum">#${q.id}</span></div>
+      <div class="qtext">${q.q}</div>
+    </div>
+    <div class="qbody" id="body-${q.id}">
+      <div class="qdiv"></div>
+      ${q.type==='mc'?`<div class="ans-lbl">Выберите правильный вариант:</div><div class="opts" id="opts-${q.id}">${opts}</div>`:''}
+      ${ta}
+      ${btns}
+      ${hint}
+      ${expl}
+      ${rate}
+    </div>
+  </div>`;
+}
+
+// === ОТКРЫТЬ/ЗАКРЫТЬ КАРТОЧКУ ===
+function toggleCard(id){
+  const body=document.getElementById('body-'+id);
+  body.classList.toggle('open');
+}
+
+// === ВЫБОР ВАРИАНТА ОТВЕТА ===
+function selOpt(el,qid,idx){
+  const parent=document.getElementById('opts-'+qid);
+  parent.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel');
+  el.dataset.selIdx=idx;
+}
+
+// === ПРОВЕРКА ОТВЕТА ===
+function checkAnswer(id){
+  const q=Q.find(x=>x.id===id);
+  if(!q)return;
+  let correct=false;
+  if(q.type==='mc'){
+    const sel=document.querySelector(`#opts-${id} .opt.sel`);
+    if(sel){
+      const idx=+sel.dataset.selIdx;
+      correct=idx===q.correct;
+      const opts=document.querySelectorAll(`#opts-${id} .opt`);
+      opts.forEach((o,i)=>{
+        o.classList.add('dis');
+        if(i===q.correct)o.classList.add('cor');
+        else if(i===idx&&!correct)o.classList.add('wrg');
+      });
+    }
+  }else{
+    const ta=document.getElementById('ta-'+id);
+    if(ta&&ta.value.trim().length>0){
+      correct=true;
+      ta.style.borderColor='var(--success)';
+    }
+  }
+  const now=new Date().toISOString();
+  if(!P[id])P[id]={attempts:0};
+  P[id].attempts++;
+  P[id].lastCheck=now;
+  if(correct){
+    if(!P[id].status||P[id].status==='new'||P[id].status==='bad')P[id].status='ok';
+  }else{
+    P[id].status='bad';
+  }
+  saveProgress();
+  document.getElementById('rate-'+id).classList.add('show');
+  renderCardInGrid(id);
+}
+
+// === ПОКАЗАТЬ/СКРЫТЬ ПОДСКАЗКУ ===
+function toggleHint(id){
+  const h=document.getElementById('hint-'+id);
+  h.classList.toggle('show');
+}
+
+// === ПОКАЗАТЬ/СКРЫТЬ ОБЪЯСНЕНИЕ ===
+function toggleExplain(id){
+  const e=document.getElementById('expl-'+id);
+  e.classList.toggle('show');
+}
+
+// === УСТАНОВИТЬ ОЦЕНКУ ===
+function setRate(id,st){
+  if(!P[id])P[id]={attempts:0};
+  P[id].status=st;
+  saveProgress();
+  const saved=document.getElementById('saved-'+id);
+  saved.style.display='inline';
+  setTimeout(()=>saved.style.display='none',2000);
+  renderCardInGrid(id);
+}
+
+// === ПЕРЕРИСОВАТЬ ОДНУ КАРТОЧКУ ===
+function renderCardInGrid(id){
+  const q=Q.find(x=>x.id===id);
+  if(!q||!matches(q))return;
+  const card=document.getElementById('card-'+id);
+  if(card){
+    const temp=document.createElement('div');
+    temp.innerHTML=renderCard(q);
+    card.replaceWith(temp.firstElementChild);
+  }
+}
+
+// === ПЕРЕМЕШАТЬ ВОПРОСЫ ===
+function shuffle(){
+  for(let i=Q.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[Q[i],Q[j]]=[Q[j],Q[i]];}
+  renderAll();
+}
+
+// === СБРОСИТЬ ПРОГРЕСС ===
+function resetAll(){
+  if(confirm('Вы уверены? Весь прогресс будет удалён.')){
+    P={};
+    localStorage.removeItem('gia_progress');
+    updateStats();
+    renderAll();
+  }
+}
+
+// === ЭКСПОРТ ПРОГРЕССА ===
+function exportProgress(){
+  const data=JSON.stringify(P,null,2);
+  const blob=new Blob([data],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='gia-progress.json';a.click();
+  URL.revokeObjectURL(url);
+}
+
+// === МОДАЛЬНОЕ ОКНО ===
+function closeModal(){document.getElementById('modal-overlay').classList.remove('show');}
+
+// === ИНИЦИАЛИЗАЦИЯ ===
+window.onload=function(){loadProgress();renderAll();};
+</script>
+</body>
+</html>
